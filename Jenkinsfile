@@ -31,6 +31,8 @@ node {
                 echo "Trying to Push Docker Build to DockerHub"
     }
 	stage('Start the Container') {
+		sh 'docker stop $(docker ps -a -q)'
+		sh 'docker rm $(docker ps -a -q)'
 	sh 'docker run -d -p 8000:8000 ananddwivedi2013/nodeapp'
 	}
 }
