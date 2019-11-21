@@ -4,7 +4,7 @@ var http = require('http');
 // configure our HTTP server
 var server = http.createServer(function (request, response) {
   response.writeHead(200, {"Content-Type": "text/plain"});
-  response.end("My Second Node App using Poll SCM!! \n");
+  response.end("My Second Node App using Poll SCM && Installing ps inside container!! \n");
 });
 
 // listen on localhost:8000

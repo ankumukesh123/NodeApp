@@ -4,6 +4,10 @@ FROM node:7-onbuild
 # set maintainer
 LABEL maintainer "ankumukesh.thakur@gmail.com"
 
+RUN apt-get update -y
+RUN apt-get install procps -y
+RUN mkdir Test
+
 # set a health check
 HEALTHCHECK --interval=5s \
             --timeout=5s \
