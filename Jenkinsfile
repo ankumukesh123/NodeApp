@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("ananddwivedi2013/nodeapp")
+        app = docker.build("ankumukesh91/nodeapp")
     }
 
     stage('Test image') {
@@ -24,7 +24,7 @@ node {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
-        docker.withRegistry('https://registry.hub.docker.com', '13e71cec-8462-4498-ac65-9525d0f56ce1') {
+        docker.withRegistry('https://registry.hub.docker.com', 'eec997b9-5f0e-4e9e-b3bb-ad99f5be12e5') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
             } 
@@ -33,6 +33,6 @@ node {
 	stage('Start the Container') {
 		sh 'docker stop $(docker ps -a -q)'
 		sh 'docker rm $(docker ps -a -q)'
-	sh 'docker run -d -p 8000:8000 ananddwivedi2013/nodeapp'
+	sh 'docker run -d -p 8000:8000 ankumukesh91/nodeapp'
 	}
 }
