@@ -4,7 +4,7 @@ var http = require('http');
 // configure our HTTP server
 var server = http.createServer(function (request, response) {
   response.writeHead(200, {"Content-Type": "text/plain"});
-  response.end("Congratulation, Succesfully Deployed Nodejs Application \n");
+  response.end("Congratulation, Succesfully Deployed Nodejs Application using Jenkins pipeline \n");
 });
 
 // listen on localhost:8000
